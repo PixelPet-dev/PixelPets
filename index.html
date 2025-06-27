@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PixelPets - 区块链像素宠物游戏</title>
+    <title>PixelPets - BlockChain Pets FeedingGame</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -1947,13 +1947,13 @@
                             const formattedBalance = ethBalance.toFixed(4);
                             
                             // 更新余额显示
-                            coinAmount.textContent = `${formattedBalance} ETH`;
-                            userCoins.textContent = `${formattedBalance} ETH`;
+                            coinAmount.textContent = `${formattedBalance} BNB`;
+                            userCoins.textContent = `${formattedBalance} BNB`;
                             
                             // 添加日志
                             addLogEntry('成功连接MetaMask钱包');
                             addLogEntry(`钱包地址: ${account.substring(0, 6)}...${account.substring(account.length - 4)}`);
-                            addLogEntry(`钱包余额: ${formattedBalance} ETH`);
+                            addLogEntry(`钱包余额: ${formattedBalance} BNB`);
                             
                             closeWalletModal();
                         }
