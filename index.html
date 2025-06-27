@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PixelPets</title>
+    <title>PixelPets - 区块链像素宠物游戏</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -146,16 +146,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background: #fff;
+            border: 3px solid #ffd54f;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(255, 213, 79, 0.2);
         }
         
         .pet-image {
             max-width: 100%;
             max-height: 100%;
-            border: 3px solid #ffd54f;
-            border-radius: 8px;
-            background: #fff;
             padding: 10px;
-            box-shadow: 0 5px 15px rgba(255, 213, 79, 0.2);
         }
         
         .nav-btn {
@@ -844,6 +844,37 @@
             cursor: pointer;
             font-size: 1rem;
         }
+        
+        /* 语言选择器 */
+        .language-selector {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 10;
+        }
+        
+        #languageSelect {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid #ffd54f;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.6rem;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='18px' height='18px'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 16px;
+            padding-right: 30px;
+            text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+        }
+        
+        #languageSelect option {
+            background: #4db6ac;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -851,7 +882,18 @@
         <div class="pixel-border"></div>
         
         <div class="game-header">
-            <h1 class="game-title">PixelPet</h1>
+            <!-- 语言选择器 -->
+            <div class="language-selector">
+                <select id="languageSelect">
+                    <option value="zh-CN">简体中文</option>
+                    <option value="zh-TW">繁體中文</option>
+                    <option value="en">English</option>
+                    <option value="ja">日本語</option>
+                    <option value="ko">한국어</option>
+                </select>
+            </div>
+            
+            <h1 class="game-title">PixelPets</h1>
             <div class="subtitle">Take Care Of Your PetFriends！</div>
             
             <div class="wallet-section">
@@ -872,12 +914,12 @@
                     <button class="nav-btn prev-btn">
                         <i class="fas fa-chevron-left"></i>
                     </button>
-                    <img id="petImage" class="pet-image" src="image/chicken.png" alt="像素宠物">
+                    <img id="petImage" class="pet-image" src="components/image/chicken.png" alt="像素宠物">
                     <button class="nav-btn next-btn">
                         <i class="fas fa-chevron-right"></i>
                     </button>
                 </div>
-                <div class="pet-name">像素小黄鸡</div>
+                <div class="pet-name">像素小宠物</div>
             </div>
             
             <div class="pet-stats">
@@ -932,13 +974,13 @@
                 <div id="chatArea">
                     <div class="chat-messages" id="chatMessages">
                         <div class="message pet-message">
-                            你好主人！我是像素小黄鸡，让我们一起开始美好的时光吧！
+                            你好主人！我是像素小宠物，让我们一起开始美好的时光吧！
                         </div>
                         <div class="message pet-message">
                             你可以和我聊天，或者点击下面的按钮照顾我！
                         </div>
                         <div class="message pet-message">
-                            你为小黄鸡清理了环境，它感觉很舒适！
+                            你为小宠物清理了环境，它感觉很舒适！
                         </div>
                     </div>
                     <div class="chat-input">
@@ -952,19 +994,19 @@
                         <span class="log-timestamp">[10:00]</span> 系统: 欢迎来到像素宠物乐园！
                     </div>
                     <div class="log-entry">
-                        <span class="log-timestamp">[10:01]</span> 你选择了小黄鸡作为宠物
+                        <span class="log-timestamp">[10:01]</span> 你选择了小宠物作为伙伴
                     </div>
                     <div class="log-entry">
                         <span class="log-timestamp">[10:02]</span> 宠物: 你好主人！
                     </div>
                     <div class="log-entry">
-                        <span class="log-timestamp">[10:05]</span> 你喂了小黄鸡一些食物
+                        <span class="log-timestamp">[10:05]</span> 你喂了小宠物一些食物
                     </div>
                     <div class="log-entry">
-                        <span class="log-timestamp">[10:10]</span> 你为小黄鸡清理了环境
+                        <span class="log-timestamp">[10:10]</span> 你为小宠物清理了环境
                     </div>
                     <div class="log-entry">
-                        <span class="log-timestamp">[10:15]</span> 你和小黄鸡一起玩耍
+                        <span class="log-timestamp">[10:15]</span> 你和小宠物一起玩耍
                     </div>
                 </div>
             </div>
@@ -1135,7 +1177,7 @@
                     <div class="game-title">区块链成就</div>
                     <div class="stat-item" style="margin-top: 15px;">
                         <div class="stat-title">最高亲密度</div>
-                        <div class="stat-value">小黄鸡: 95%</div>
+                        <div class="stat-value">小宠物: 95%</div>
                         <div class="stat-bar">
                             <div class="stat-fill bond-fill" style="width: 95%;"></div>
                         </div>
@@ -1326,10 +1368,392 @@
                 });
             });
             
+            // 多语言支持
+            const languageSelect = document.getElementById('languageSelect');
+            const chatMessages = document.getElementById('chatMessages');
+            
+            const translations = {
+                'zh-CN': { // 简体中文
+                    connectWallet: "连接钱包",
+                    walletConnected: "已连接",
+                    petName: "像素小宠物",
+                    mood: "心情值",
+                    hunger: "饥饿度",
+                    bond: "亲密度",
+                    feed: "喂食",
+                    play: "玩耍",
+                    clean: "清理",
+                    heal: "治疗",
+                    chatTab: "与宠物对话",
+                    logTab: "操作记录",
+                    chatPlaceholder: "输入你想说的话...",
+                    send: "发送",
+                    shopTitle: "宠物商店",
+                    food: "食物道具",
+                    pets: "宠物类型",
+                    nft: "NFT宠物",
+                    buy: "购买",
+                    profile: "我的",
+                    games: "小游戏",
+                    petsTab: "养宠物",
+                    shop: "商店",
+                    gamesTab: "小游戏",
+                    profileTab: "我的",
+                    petNames: ["小蜜蜂", "猫咪", "狗狗", "海豚", "狐狸", "青蛙", "刺猬", "瓢虫", "熊猫", "企鹅", "兔子", "松鼠", "乌龟"],
+                    initialMessages: [
+                        "你好主人！我是像素小宠物，让我们一起开始美好的时光吧！",
+                        "你可以和我聊天，或者点击下面的按钮照顾我！",
+                        "你为小宠物清理了环境，它感觉很舒适！"
+                    ],
+                    replies: [
+                        "哦？这很有趣！",
+                        "作为一只小宠物，我不太明白...",
+                        "哈哈，这让我很开心！",
+                        "主人，这个话题让我很感兴趣！",
+                        "嗯...这是个有趣的话题！",
+                        "关于这个，我有一个小故事想分享！",
+                        "我对这个有特别的感受！",
+                        "这个话题让我想起上次我们玩耍的时光！"
+                    ],
+                    actionResponses: {
+                        feed: "你喂了{name}一些食物，它开心地吃了起来！",
+                        play: "你和{name}一起玩耍，它非常开心！",
+                        clean: "你为{name}清理了环境，它感觉很舒适！",
+                        heal: "你照顾了{name}，它的状态更好了！"
+                    }
+                },
+                'zh-TW': { // 繁體中文
+                    connectWallet: "連接錢包",
+                    walletConnected: "已連接",
+                    petName: "像素小寵物",
+                    mood: "心情值",
+                    hunger: "飢餓度",
+                    bond: "親密度",
+                    feed: "餵食",
+                    play: "玩耍",
+                    clean: "清理",
+                    heal: "治療",
+                    chatTab: "與寵物對話",
+                    logTab: "操作記錄",
+                    chatPlaceholder: "輸入你想說的話...",
+                    send: "發送",
+                    shopTitle: "寵物商店",
+                    food: "食物道具",
+                    pets: "寵物類型",
+                    nft: "NFT寵物",
+                    buy: "購買",
+                    profile: "我的",
+                    games: "小遊戲",
+                    petsTab: "養寵物",
+                    shop: "商店",
+                    gamesTab: "小遊戲",
+                    profileTab: "我的",
+                    petNames: ["小蜜蜂", "貓咪", "狗狗", "海豚", "狐狸", "青蛙", "刺猬", "瓢蟲", "熊貓", "企鵝", "兔子", "松鼠", "烏龜"],
+                    initialMessages: [
+                        "你好主人！我是像素小寵物，讓我們一起開始美好的時光吧！",
+                        "你可以和我聊天，或者點擊下面的按鈕照顧我！",
+                        "你為小寵物清理了環境，它感覺很舒適！"
+                    ],
+                    replies: [
+                        "哦？這很有趣！",
+                        "作為一隻小寵物，我不太明白...",
+                        "哈哈，這讓我很開心！",
+                        "主人，這個話題讓我很感興趣！",
+                        "嗯...這是個有趣的話題！",
+                        "關於這個，我有一個小故事想分享！",
+                        "我對這個有特別的感受！",
+                        "這個話題讓我想起上次我們玩耍的時光！"
+                    ],
+                    actionResponses: {
+                        feed: "你餵了{name}一些食物，它開心地吃了起來！",
+                        play: "你和{name}一起玩耍，它非常開心！",
+                        clean: "你為{name}清理了環境，它感覺很舒適！",
+                        heal: "你照顧了{name}，它的狀態更好了！"
+                    }
+                },
+                'en': { // 英文
+                    connectWallet: "Connect Wallet",
+                    walletConnected: "Connected",
+                    petName: "Pixel Pet",
+                    mood: "Mood",
+                    hunger: "Hunger",
+                    bond: "Bond",
+                    feed: "Feed",
+                    play: "Play",
+                    clean: "Clean",
+                    heal: "Heal",
+                    chatTab: "Chat",
+                    logTab: "Logs",
+                    chatPlaceholder: "Type your message...",
+                    send: "Send",
+                    shopTitle: "Pet Shop",
+                    food: "Food Items",
+                    pets: "Pets",
+                    nft: "NFT Pets",
+                    buy: "Buy",
+                    profile: "Profile",
+                    games: "Mini Games",
+                    petsTab: "My Pets",
+                    shop: "Shop",
+                    gamesTab: "Games",
+                    profileTab: "Profile",
+                    petNames: ["Bee", "Cat", "Dog", "Dolphin", "Fox", "Frog", "Hedgehog", "Ladybug", "Panda", "Penguin", "Rabbit", "Squirrel", "Turtle"],
+                    initialMessages: [
+                        "Hello master! I'm your pixel pet, let's have a great time together!",
+                        "You can chat with me or click the buttons below to take care of me!",
+                        "You cleaned the environment for your pet, it feels comfortable!"
+                    ],
+                    replies: [
+                        "Oh? That's interesting!",
+                        "As a little pet, I don't quite understand...",
+                        "Haha, that makes me happy!",
+                        "Master, this topic interests me!",
+                        "Hmm... this is an interesting topic!",
+                        "About this, I have a little story to share!",
+                        "I have special feelings about this!",
+                        "This topic reminds me of the time we played together!"
+                    ],
+                    actionResponses: {
+                        feed: "You fed {name} some food, it ate happily!",
+                        play: "You played with {name}, it was very happy!",
+                        clean: "You cleaned the environment for {name}, it feels comfortable!",
+                        heal: "You took care of {name}, its condition improved!"
+                    }
+                },
+                'ja': { // 日文
+                    connectWallet: "ウォレット接続",
+                    walletConnected: "接続済み",
+                    petName: "ピクセルペット",
+                    mood: "気分",
+                    hunger: "空腹度",
+                    bond: "親密度",
+                    feed: "餌やり",
+                    play: "遊ぶ",
+                    clean: "掃除",
+                    heal: "治療",
+                    chatTab: "チャット",
+                    logTab: "ログ",
+                    chatPlaceholder: "メッセージを入力...",
+                    send: "送信",
+                    shopTitle: "ペットショップ",
+                    food: "フード",
+                    pets: "ペット",
+                    nft: "NFTペット",
+                    buy: "購入",
+                    profile: "プロフィール",
+                    games: "ミニゲーム",
+                    petsTab: "ペット",
+                    shop: "ショップ",
+                    gamesTab: "ゲーム",
+                    profileTab: "プロフィール",
+                    petNames: ["ハチ", "ネコ", "イヌ", "イルカ", "キツネ", "カエル", "ハリネズミ", "テントウムシ", "パンダ", "ペンギン", "ウサギ", "リス", "カメ"],
+                    initialMessages: [
+                        "こんにちは、マスター！私はピクセルペットです。一緒に素敵な時間を過ごしましょう！",
+                        "私とチャットしたり、下のボタンをクリックしてお世話をしたりできます！",
+                        "あなたがペットのために環境を整えました、ペットは快適に感じています！"
+                    ],
+                    replies: [
+                        "おお？それは面白いですね！",
+                        "小さなペットとして、あまり理解できません...",
+                        "はは、それは私を幸せにします！",
+                        "マスター、この話題は私の興味を引きます！",
+                        "うーん...これは興味深い話題です！",
+                        "これについて、共有したい小さな話があります！",
+                        "これについては特別な感情があります！",
+                        "この話題は、一緒に遊んだ時間を思い出させます！"
+                    ],
+                    actionResponses: {
+                        feed: "{name}に餌をあげました、嬉しそうに食べています！",
+                        play: "{name}と一緒に遊びました、とても嬉しそうです！",
+                        clean: "{name}のために環境を整えました、とても快適そうです！",
+                        heal: "{name}の世話をしました、状態が良くなりました！"
+                    }
+                },
+                'ko': { // 韩文
+                    connectWallet: "지갑 연결",
+                    walletConnected: "연결됨",
+                    petName: "픽셀 펫",
+                    mood: "기분",
+                    hunger: "배고픔",
+                    bond: "친밀도",
+                    feed: "먹이 주기",
+                    play: "놀아주기",
+                    clean: "청소",
+                    heal: "치료",
+                    chatTab: "채팅",
+                    logTab: "기록",
+                    chatPlaceholder: "메시지를 입력하세요...",
+                    send: "보내기",
+                    shopTitle: "펫 샵",
+                    food: "음식",
+                    pets: "펫",
+                    nft: "NFT 펫",
+                    buy: "구매",
+                    profile: "프로필",
+                    games: "미니 게임",
+                    petsTab: "펫 관리",
+                    shop: "상점",
+                    gamesTab: "게임",
+                    profileTab: "내 정보",
+                    petNames: ["벌", "고양이", "개", "돌고래", "여우", "개구리", "고슴도치", "무당벌레", "판다", "펭귄", "토끼", "다람쥐", "거북이"],
+                    initialMessages: [
+                        "안녕하세요 주인님! 저는 픽셀 펫입니다. 함께 즐거운 시간을 보내요!",
+                        "저와 채팅하거나 아래 버튼을 클릭해서 저를 돌봐주세요!",
+                        "주인님이 펫을 위해 환경을 정리해주셨어요, 펫이 편안해하고 있어요!"
+                    ],
+                    replies: [
+                        "오? 그거 재미있네요!",
+                        "작은 펫으로서 잘 이해가 안 가요...",
+                        "하하, 그건 저를 행복하게 해요!",
+                        "주인님, 이 주제는 저의 관심을 끌어요!",
+                        "음... 이것은 흥미로운 주제예요!",
+                        "이것에 대해, 나눌 작은 이야기가 있어요!",
+                        "이것에 대해 특별한 감정이 있어요!",
+                        "이 주제는 우리가 함께 놀았던 시간을 떠올리게 해요!"
+                    ],
+                    actionResponses: {
+                        feed: "{name}에게 먹이를 주셨어요, 기쁘게 먹고 있어요!",
+                        play: "{name}와 함께 놀아주셨어요, 정말 행복해 보여요!",
+                        clean: "{name}을 위해 환경을 정리해주셨어요, 아주 편안해 보여요!",
+                        heal: "{name}을 돌봐주셨어요, 상태가 더 좋아졌어요!"
+                    }
+                }
+            };
+            
+            // 当前语言
+            let currentLang = 'zh-CN';
+            
+            // 更新界面语言
+            function updateLanguage() {
+                const lang = translations[currentLang];
+                
+                // 更新导航栏文本
+                document.querySelector('.connect-btn').innerHTML = `<i class="fas fa-wallet"></i> ${lang.connectWallet}`;
+                
+                // 更新宠物名称
+                pets.forEach((pet, index) => {
+                    if (index === currentPetIndex) {
+                        petName.textContent = lang.petNames[index];
+                    }
+                });
+                
+                // 更新状态标题
+                document.querySelectorAll('.stat-title').forEach((el, index) => {
+                    if(index === 0) el.textContent = lang.mood;
+                    if(index === 1) el.textContent = lang.hunger;
+                    if(index === 2) el.textContent = lang.bond;
+                });
+                
+                // 更新交互按钮
+                document.querySelectorAll('.action-btn span').forEach((el, index) => {
+                    const actions = [lang.feed, lang.play, lang.clean, lang.heal];
+                    el.textContent = actions[index];
+                });
+                
+                // 更新标签页
+                document.querySelectorAll('.tab').forEach((el, index) => {
+                    if(index === 0) el.textContent = lang.chatTab;
+                    if(index === 1) el.textContent = lang.logTab;
+                });
+                
+                // 更新聊天输入框
+                document.getElementById('messageInput').placeholder = lang.chatPlaceholder;
+                document.getElementById('sendButton').textContent = lang.send;
+                
+                // 更新商店
+                document.querySelector('#shopPage h2').textContent = lang.shopTitle;
+                document.querySelectorAll('.category-btn').forEach((el, index) => {
+                    const categories = [lang.food, lang.pets, lang.nft];
+                    el.textContent = categories[index];
+                });
+                document.querySelectorAll('.buy-btn').forEach(btn => {
+                    btn.textContent = lang.buy;
+                });
+                
+                // 更新底部导航
+                document.querySelectorAll('.nav-item span').forEach((el, index) => {
+                    const tabs = [lang.petsTab, lang.shop, lang.gamesTab, lang.profileTab];
+                    el.textContent = tabs[index];
+                });
+                
+                // 更新游戏页面标题
+                document.querySelectorAll('.game-title').forEach(el => {
+                    if(el.parentElement.classList.contains('game-card')) {
+                        el.textContent = lang.games;
+                    }
+                });
+                
+                // 更新个人中心
+                document.querySelector('#profilePage .user-name').textContent = lang.profile;
+                
+                // 更新初始聊天消息
+                chatMessages.innerHTML = '';
+                lang.initialMessages.forEach(msg => {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.className = 'message pet-message';
+                    messageDiv.textContent = msg;
+                    chatMessages.appendChild(messageDiv);
+                });
+            }
+            
+            // 根据IP设置默认语言
+            function setLanguageByIP() {
+                // 在实际应用中，这里应该调用IP地理位置API
+                // 这里使用浏览器语言设置作为模拟
+                const userLang = navigator.language || navigator.userLanguage;
+                
+                // 模拟IP地理位置检测
+                const mockIPLocation = {
+                    'ja': 'JP', // 日本
+                    'ko': 'KR', // 韩国
+                    'zh-TW': 'TW', // 台湾
+                    'zh-HK': 'HK', // 香港
+                    'zh-MO': 'MO', // 澳门
+                    'zh-CN': 'CN' // 中国大陆
+                };
+                
+                // 根据浏览器语言设置默认语言
+                if (userLang.startsWith('ja')) {
+                    currentLang = 'ja';
+                } else if (userLang.startsWith('ko')) {
+                    currentLang = 'ko';
+                } else if (userLang === 'zh-TW' || userLang === 'zh-HK' || userLang === 'zh-MO') {
+                    currentLang = 'zh-TW';
+                } else if (userLang.startsWith('zh')) {
+                    currentLang = 'zh-CN';
+                } else {
+                    currentLang = 'en';
+                }
+                
+                // 更新语言选择器
+                languageSelect.value = currentLang;
+                
+                // 更新界面语言
+                updateLanguage();
+            }
+            
+            // 初始化语言设置
+            setLanguageByIP();
+            
+            // 语言选择事件
+            languageSelect.addEventListener('change', function() {
+                currentLang = this.value;
+                updateLanguage();
+                
+                // 添加到日志
+                const langNames = {
+                    'zh-CN': "简体中文",
+                    'zh-TW': "繁體中文",
+                    'en': "English",
+                    'ja': "日本語",
+                    'ko': "한국어"
+                };
+                addLogEntry(`语言切换为: ${langNames[currentLang]}`);
+            });
+            
             // 发送消息
             const sendButton = document.getElementById('sendButton');
             const messageInput = document.getElementById('messageInput');
-            const chatMessages = document.getElementById('chatMessages');
             
             function sendMessage() {
                 const message = messageInput.value.trim();
@@ -1351,22 +1775,13 @@
                     
                     // 模拟宠物回复
                     setTimeout(() => {
-                        const replies = [
-                            "哦？这很有趣！",
-                            "作为一只小黄鸡，我不太明白...",
-                            "哈哈，这让我很开心！",
-                            "主人，这个话题让我很感兴趣！",
-                            "嗯...这是个有趣的话题！",
-                            "关于这个，我有一个小故事想分享！",
-                            "作为小黄鸡，我对这个有特别的感受！",
-                            "这个话题让我想起上次我们玩耍的时光！"
-                        ];
-                        
-                        const randomReply = replies[Math.floor(Math.random() * replies.length)];
+                        const lang = translations[currentLang];
+                        const petName = lang.petNames[currentPetIndex];
+                        const randomReply = lang.replies[Math.floor(Math.random() * lang.replies.length)];
                         
                         const petMessageDiv = document.createElement('div');
                         petMessageDiv.className = 'message pet-message';
-                        petMessageDiv.textContent = `${pets[currentPetIndex].name}: ${randomReply}`;
+                        petMessageDiv.textContent = `${petName}: ${randomReply}`;
                         chatMessages.appendChild(petMessageDiv);
                         
                         // 滚动到底部
@@ -1397,27 +1812,15 @@
             actionButtons.forEach(btn => {
                 btn.addEventListener('click', function() {
                     const action = this.classList[1];
-                    let message = '';
+                    const lang = translations[currentLang];
+                    const petName = lang.petNames[currentPetIndex];
                     
-                    switch(action) {
-                        case 'feed':
-                            message = `你喂了${pets[currentPetIndex].name}一些食物，它开心地吃了起来！`;
-                            break;
-                        case 'play':
-                            message = `你和${pets[currentPetIndex].name}一起玩耍，它非常开心！`;
-                            break;
-                        case 'clean':
-                            message = `你为${pets[currentPetIndex].name}清理了环境，它感觉很舒适！`;
-                            break;
-                        case 'heal':
-                            message = `你照顾了${pets[currentPetIndex].name}，它的状态更好了！`;
-                            break;
-                    }
+                    const message = lang.actionResponses[action].replace('{name}', petName);
                     
                     // 添加宠物消息
                     const messageDiv = document.createElement('div');
                     messageDiv.className = 'message pet-message';
-                    messageDiv.textContent = `${pets[currentPetIndex].name}: ${message}`;
+                    messageDiv.textContent = `${petName}: ${message}`;
                     chatMessages.appendChild(messageDiv);
                     
                     // 滚动到底部
@@ -1517,43 +1920,56 @@
                 }
             });
             
-            // 模拟连接MetaMask
-            metamaskOption.addEventListener('click', function() {
-                // 模拟连接过程
-                connectWalletBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> 连接中...';
-                
-                setTimeout(function() {
-                    // 模拟连接成功
-                    isWalletConnected = true;
-                    connectWalletBtn.innerHTML = '<i class="fas fa-check"></i> 已连接';
-                    connectWalletBtn.classList.add('connected');
-                    
-                    // 更新代币余额
-                    const balance = (Math.random() * 5).toFixed(4);
-                    coinAmount.textContent = `${balance} BNB`;
-                    userCoins.textContent = `${balance} BNB`;
-                    
-                    // 添加日志
-                    addLogEntry('成功连接MetaMask钱包');
-                    addLogEntry(`钱包余额: ${balance} BNB`);
-                    
-                    closeWalletModal();
-                }, 1500);
-            });
-            
-            // 模拟切换至BSC链
-            function switchToBSC() {
-                if (isWalletConnected) {
-                    addLogEntry('正在切换至BSC链...');
-                    
-                    setTimeout(function() {
-                        addLogEntry('已成功切换至BSC链');
-                    }, 1000);
+            // 真实钱包连接逻辑
+            async function connectToMetaMask() {
+                try {
+                    // 检查是否安装了MetaMask
+                    if (typeof window.ethereum !== 'undefined') {
+                        // 请求账户访问
+                        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+                        
+                        if (accounts.length > 0) {
+                            const account = accounts[0];
+                            // 更新UI
+                            connectWalletBtn.innerHTML = '<i class="fas fa-check"></i> ' + translations[currentLang].walletConnected;
+                            connectWalletBtn.classList.add('connected');
+                            isWalletConnected = true;
+                            
+                            // 获取余额
+                            const balance = await ethereum.request({ 
+                                method: 'eth_getBalance', 
+                                params: [account, 'latest'] 
+                            });
+                            
+                            // 转换余额为ETH
+                            const wei = parseInt(balance);
+                            const ethBalance = wei / 1000000000000000000;
+                            const formattedBalance = ethBalance.toFixed(4);
+                            
+                            // 更新余额显示
+                            coinAmount.textContent = `${formattedBalance} ETH`;
+                            userCoins.textContent = `${formattedBalance} ETH`;
+                            
+                            // 添加日志
+                            addLogEntry('成功连接MetaMask钱包');
+                            addLogEntry(`钱包地址: ${account.substring(0, 6)}...${account.substring(account.length - 4)}`);
+                            addLogEntry(`钱包余额: ${formattedBalance} ETH`);
+                            
+                            closeWalletModal();
+                        }
+                    } else {
+                        alert('请安装MetaMask钱包！');
+                        window.open('https://metamask.io/', '_blank');
+                    }
+                } catch (error) {
+                    console.error('连接钱包失败:', error);
+                    alert('钱包连接失败: ' + error.message);
+                    addLogEntry(`钱包连接失败: ${error.message}`);
                 }
             }
             
-            // 初始化切换至BSC链
-            switchToBSC();
+            // 连接MetaMask
+            metamaskOption.addEventListener('click', connectToMetaMask);
         });
     </script>
 </body>
